@@ -1,20 +1,18 @@
 #include <stdio.h>
 
-int a[100001], pSum[100001];
+int s[100001];
 
 int main()
 {
-	int i, n;
+	int i, n, k;
 	long long ans=0LL;
-	scanf("%d", &n);
+	scanf("%d%d", &n, s+1);
 
-	for(i=1; i<=n; i++) {
-		scanf("%d", a+i);
-		pSum[i] = pSum[i-1]+a[i];
+	for(i=2; i<=n; i++) {
+		scanf("%d", &k);
+		s[i] = s[i-1]+k;
+		ans += 1LL*k*s[i-1];
 	}
-
-	for(i=n; i>1; i--) 
-		ans += 1LL*a[i]*pSum[i-1];
 
 	printf("%lld\n", ans);
 	return 0;
