@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
+int n, m;
 int g[501][501], d[501][501];
 int dr[]={1, 0, -1, 0};
 int dc[]={0, 1, 0, -1};
-int n, m;
 
 int safe(int r, int c)
 {
