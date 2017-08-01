@@ -12,20 +12,13 @@ void dfs(int cur)
 	visited[cur] = 1;
 
 	int next = g[cur];
-	if(cur == next) {
-		finished[cur] = 1;
-		ans.push_back(cur);
-		return ;
-	}
 	if(!visited[next]) dfs(next);
 	else {
 		if(!finished[next]) {
-			for(int j=next; j!=cur; j=g[j]) {
+			for(int j=next; !finished[j]; j=g[j]) {
 				finished[j] = 1;
 				ans.push_back(j);
 			}
-			finished[cur] = 1;
-			ans.push_back(cur);
 		}
 	}
 	finished[cur] = 1;
