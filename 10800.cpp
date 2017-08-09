@@ -3,12 +3,14 @@
 #include <algorithm>
 using namespace std;
 
-struct P { int c, s, i; };
+struct P { 
+	int c, s, i; 
+	bool operator< (const P &a) const {
+		return s < a.s;
+	}
+};
 
-bool cmp(P a, P b)
-{
-	return a.s < b.s;
-}
+//bool cmp(P a, P b) { return a.s < b.s; }
 
 int main()
 {
@@ -23,7 +25,8 @@ int main()
 		v.push_back((P){c, s, i});
 	}
 
-	sort(v.begin(), v.end(), cmp);
+	//sort(v.begin(), v.end(), cmp);
+	sort(v.begin(), v.end());
 
 	int pSum = 0;
 	vector<int> ans(n), cSum(n+1, 0);
