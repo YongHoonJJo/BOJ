@@ -17,10 +17,10 @@ int main()
 	for(i=0; i<n; i++) {
 		int cnt = 1;
 		for(j=0; j<n; j++)
-		if(std[i].x < std[j].x && std[i].y < std[j].y)
-			cnt++;
+			if(std[i].x < std[j].x && std[i].y < std[j].y)
+				cnt++;
 		printf("%d ", cnt);
 	}
-		
+
 	return 0;
 }
