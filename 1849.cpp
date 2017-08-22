@@ -23,19 +23,15 @@ int emptyCnt(int a, int node, int nodeL, int nodeR)
 	return emptyCnt(a, node*2, nodeL, mid);
 }
 
-
 int main()
 {
-	int i, n;
-	int a, cnt;
-	scanf("%d%d", &n, &a);
+	int i, n, a, cnt;
+	scanf("%d", &n);
 
 	for(i=1; i<=n; i++)
 		update(i, 1);
-	ans[1+a] = 1;
-	update(1+a, 0);
 	
-	for(i=2; i<=n; i++) {
+	for(i=1; i<=n; i++) {
 		scanf("%d", &a);
 		cnt = emptyCnt(a+1, 1, 0, sIdx-1); // i 앞의 빈칸의 수(i자리 포함)
 		update(cnt, 0);
