@@ -18,7 +18,7 @@ int Union(int a, int b)
 	a = Find(a);
 	b = Find(b);
 	if(a != b) {
-		p[a] = b;
+		p[a] = b;	// b 가 루트
 		ans[b] += ans[a];	
 	}
 	return ans[b];
